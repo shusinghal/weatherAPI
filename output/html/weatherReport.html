@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Weather report &#8212; Weather API 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Sign in steps" href="signIn.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="weather-report">
+<h1>Weather report<a class="headerlink" href="#weather-report" title="Link to this heading">¶</a></h1>
+<p>This service provides temperature for each location. You can search for the past weather report and future predictions up to six months.</p>
+<p>Recommendation: Use postman to test your API first. If the test is successful, use postman’s code snippet in your program. This helps you identify if there is a connection issue.</p>
+<ul class="simple">
+<li><p>URL: <a class="reference external" href="https://example.com/weatherAPI/v1/temperatureReport">https://example.com/weatherAPI/v1/temperatureReport</a></p></li>
+<li><p>Method: GET</p></li>
+<li><p>Request headers:
+* Authentication token: Use the authentication token from step three of sign in API.</p></li>
+<li><p>Request body:</p></li>
+</ul>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Key</p></td>
+<td><p>Description</p></td>
+<td><p>Comments</p></td>
+</tr>
+<tr class="row-even"><td><p>latitude</p></td>
+<td><p>Standard latitude value</p></td>
+<td><p>Data type: float
+Required: Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>longitude</p></td>
+<td><p>Standard longitude value</p></td>
+<td><p>Data type: float
+Required: Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>timeFrame</p></td>
+<td><p>Choose a value from the following:
+* Day
+* Week
+* Month
+* Hour</p></td>
+<td><p>Day: Gives average temperature of the day.
+Week: Gives average temperature of all days of a week.
+Month: Gives average temperature of all days of a month.
+Hour: Gives average temperature of all hours in a day.</p>
+<p>Required: Yes
+Data type: string</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>InitialDate</p></td>
+<td><p>YYYY-MM-DD</p></td>
+<td><p>Required: Yes
+Data type: string
+Provide the date in the given format.</p></td>
+</tr>
+<tr class="row-even"><td><p>language</p></td>
+<td><p>Choose a value from the following:
+* English
+* Portuguese
+* French
+* Mandarin
+* Hindi
+* Korean</p></td>
+<td><p>Required: No. Default is English.
+Data type: string
+Choose a language only from the given list. If you choose an incorrect value, the system will display result in English language.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Response
+* Success: Success response contains following parameters. For each interval, the response contains list of the temperature.</p></li>
+</ul>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Status</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>200</p></td>
+<td><p>City: Name of the city.
+Temperature: Value in decimal places.
+Start date: Start date of the data.
+End date: End date of the data.
+Interval: Data interval - hour, day, week, month</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><ul class="simple">
+<li><p>Error</p></li>
+</ul>
+</div></blockquote>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Status</p></td>
+<td><p>Error code</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>400</p></td>
+<td><p>1011</p></td>
+<td><p>Invalid URL</p></td>
+</tr>
+<tr class="row-odd"><td><p>400</p></td>
+<td><p>1012</p></td>
+<td><p>Invalid latitue</p></td>
+</tr>
+<tr class="row-even"><td><p>400</p></td>
+<td><p>1013</p></td>
+<td><p>Invalid longitude</p></td>
+</tr>
+<tr class="row-odd"><td><p>403</p></td>
+<td><p>2011</p></td>
+<td><p>Invalid date</p></td>
+</tr>
+<tr class="row-even"><td><p>403</p></td>
+<td><p>2012</p></td>
+<td><p>Invalid timeframe</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Weather API</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="signIn.html">Sign in steps</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Weather report</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="signIn.html" title="previous chapter">Sign in steps</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Shubham Singhal.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/weatherReport.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
