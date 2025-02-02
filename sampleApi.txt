@@ -1,0 +1,70 @@
+{
+  "location": {
+    "name": "Delhi",
+    "region": "Delhi",
+    "country": "India",
+    "lat": 28.6139,
+    "lon": 77.2090,
+    "tz_id": "Asia/Kolkata",
+    "localtime_epoch": 1618317040,
+    "localtime": "2025-02-02 21:46"
+  },
+  "current": {
+    "temp_c": 19.0,
+    "condition": {
+      "text": "Clear",
+      "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+      "code": 1000
+    },
+    "wind_mph": 3.1,
+    "wind_kph": 5.0,
+    "wind_degree": 90,
+    "wind_dir": "E",
+    "pressure_mb": 1015.0,
+    "pressure_in": 29.97,
+    "precip_mm": 0.0,
+    "precip_in": 0.0,
+    "humidity": 50,
+    "cloud": 0,
+    "feelslike_c": 19.0,
+    "uv": 5.0
+  },
+  "forecast": {
+    "forecastday": [
+      {
+        "date": "2025-02-02",
+        "day": {
+          "maxtemp_c": 21.0,
+          "mintemp_c": 15.0,
+          "avgtemp_c": 18.0,
+          "condition": {
+            "text": "Sunny",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+            "code": 1000
+          }
+        },
+        "astro": {
+          "sunrise": "06:45 AM",
+          "sunset": "05:45 PM"
+        }
+      },
+      {
+        "date": "2025-02-03",
+        "day": {
+          "maxtemp_c": 22.0,
+          "mintemp_c": 16.0,
+          "avgtemp_c": 19.0,
+          "condition": {
+            "text": "Partly cloudy",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
+            "code": 1003
+          }
+        },
+        "astro": {
+          "sunrise": "06:46 AM",
+          "sunset": "05:46 PM"
+        }
+      }
+    ]
+  }
+}
